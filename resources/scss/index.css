@@ -10,6 +10,10 @@
   font-family: Anton;
   src: url(../fonts/Anton-Regular.ttf);
 }
+@font-face {
+  font-family: ArialBlack;
+  src: url(../fonts/ARIBLK.TTF);
+}
 :root {
   --primary-color: #232323;
   --second-color: #ffd00a;
@@ -179,7 +183,7 @@ button:hover {
   display: block;
   font-size: 9px;
   text-transform: uppercase;
-  font-family: Arial Black;
+  font-family: ArialBlack;
   letter-spacing: 0px;
 }
 .container .experience-container .date-wrapper .date {
@@ -257,8 +261,8 @@ button:hover {
 }
 .container .skill-container .skill-wrapper::after {
   content: "";
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   position: absolute;
   clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
   background-color: white;
@@ -431,7 +435,7 @@ button:hover {
 }
 .container .title-wrapper {
   color: var(--second-color);
-  font-family: Arial Black;
+  font-family: ArialBlack;
   text-transform: uppercase;
   font-size: 18px;
 }
@@ -465,7 +469,7 @@ button:hover {
 }
 .container .intro-holder .intro-wrapper {
   position: relative;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 .container .intro-holder .intro-wrapper:first-of-type::after {
   content: "";
@@ -512,7 +516,7 @@ button:hover {
   left: 0;
 }
 .container .section {
-  padding: 20px;
+  padding: 15px;
   border-left: 2px solid var(--primary-color);
   margin: 10px 0px;
 }
@@ -583,7 +587,7 @@ button:hover {
   line-height: 20px;
 }
 .container .section .info-wrapper .my-info:nth-child(1)::before {
-  font-family: Arial Black;
+  font-family: ArialBlack;
   position: relative;
   display: block;
   top: 0;
@@ -599,7 +603,7 @@ button:hover {
   text-transform: uppercase;
 }
 .container .section .info-wrapper .my-info:nth-child(2)::before {
-  font-family: Arial Black;
+  font-family: ArialBlack;
   position: relative;
   display: block;
   top: 0;
@@ -613,7 +617,7 @@ button:hover {
   text-transform: uppercase;
 }
 .container .section .info-wrapper .my-info:nth-child(3)::before {
-  font-family: Arial Black;
+  font-family: ArialBlack;
   position: relative;
   display: block;
   top: 0;
@@ -676,6 +680,7 @@ button:hover {
   justify-content: space-between;
   width: 100%;
   margin: auto;
+  margin-top: 10px;
   bottom: 0;
 }
 .container .button-holder button {
@@ -689,7 +694,7 @@ button:hover {
 }
 .container .button-holder #experience-skills {
   background-color: transparent;
-  border: 3px solid var(--primary-color);
+  border: 2px solid var(--primary-color);
 }
 .container .button-holder #portfolio {
   background-color: var(--primary-color);
