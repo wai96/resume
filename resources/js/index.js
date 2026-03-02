@@ -180,4 +180,5 @@ function back() {
   // exp_wrapper.style.top = 200 + "px";
   skill_wrapper.style.opacity = 0;
   skill_wrapper.style.top = 200 + "px";
+  tt.style.opacity = 1;
 }
