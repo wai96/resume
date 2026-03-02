@@ -105,12 +105,10 @@ button:hover {
   width: 100%;
   top: 0;
   left: 0;
-  background-image: url(../images/texture.webp);
   background-size: cover;
   mix-blend-mode: luminosity;
   pointer-events: none;
   transition: all 0.6s ease;
-  opacity: 1;
 }
 .container .exp-skill-wrapper {
   display: none;
