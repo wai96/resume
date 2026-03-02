@@ -59,7 +59,7 @@ window.onload = function () {
 };
 
 let exp_skill = document.querySelector(".exp-skill-wrapper");
-let exp_wrapper = document.querySelector(".experience-container");
+// let exp_wrapper = document.querySelector(".experience-container");
 let skill_wrapper = document.querySelector(".skill-container");
 // let skill_btn = document.getElementById("skill-set");
 // let exp_btn = document.getElementById("experience");
@@ -144,8 +144,8 @@ function infoUpdate() {
   //   } else {
   skill_wrapper.style.opacity = 1;
   skill_wrapper.style.top = 0;
-  exp_wrapper.style.opacity = 0;
-  exp_wrapper.style.top = 200 + "px";
+  // exp_wrapper.style.opacity = 0;
+  // exp_wrapper.style.top = 200 + "px";
   skill();
   // document.getElementById("back").style.backgroundColor = "var(--second-color)";
   // document.getElementById("back").style.color = "black";
@@ -176,8 +176,8 @@ document.querySelectorAll(".btn").forEach((btn) => {
 
 function back() {
   exp_skill.style.display = "none";
-  exp_wrapper.style.opacity = 0;
-  exp_wrapper.style.top = 200 + "px";
+  // exp_wrapper.style.opacity = 0;
+  // exp_wrapper.style.top = 200 + "px";
   skill_wrapper.style.opacity = 0;
   skill_wrapper.style.top = 200 + "px";
 }
