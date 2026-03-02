@@ -45,7 +45,7 @@ button:hover {
 
 .contact-btn {
   position: fixed;
-  z-index: 99;
+  z-index: 999;
   bottom: 10%;
   right: 10px;
   display: grid;
@@ -66,10 +66,9 @@ button:hover {
 }
 
 .QR {
-  width: 120px;
-  height: 120px;
+  width: 27%;
   position: absolute;
-  right: 20px;
+  right: 1.5vw;
   padding: 5px;
   background-color: white;
   z-index: 99;
@@ -91,10 +90,11 @@ button:hover {
 
 .container {
   background-color: var(--primary-color);
-  max-width: 400px;
+  max-width: 450px;
+  box-sizing: border-box;
   min-width: 350px;
   margin: auto;
-  padding: 40px;
+  padding: 40px 25px;
   position: relative;
   overflow-y: hidden;
 }
@@ -110,7 +110,7 @@ button:hover {
   mix-blend-mode: luminosity;
   pointer-events: none;
   transition: all 0.6s ease;
-  display: none;
+  opacity: 1;
 }
 .container .exp-skill-wrapper {
   display: none;
@@ -352,7 +352,7 @@ button:hover {
 .container .skill-container .skill-set-wrapper .skill-set .skill-set-description {
   width: 60%;
   color: rgb(196, 196, 196);
-  font-size: 10px;
+  font-size: 0.6em;
   margin-left: 5px;
   animation: moving 1.2s ease;
 }
@@ -380,6 +380,7 @@ button:hover {
   margin: auto;
   gap: 10px;
   width: 60%;
+  min-width: 200px;
   justify-content: center;
   padding-bottom: 50px;
   position: relative;
@@ -425,13 +426,14 @@ button:hover {
 .container .slogan {
   position: absolute;
   top: 50%;
-  right: 10px;
+  right: 5px;
   transform: translateY(-50%) scale(-1);
   color: #a4a4a4;
   white-space: nowrap;
   writing-mode: vertical-lr;
   text-orientation: mixed;
   font-size: 12px;
+  z-index: 999;
 }
 .container .title-wrapper {
   color: var(--second-color);
@@ -451,7 +453,7 @@ button:hover {
 }
 .container .intro-holder {
   background-color: var(--second-color);
-  margin-top: 20px;
+  margin-top: 16px;
   padding: 30px 20px 30px 20px;
   position: relative;
 }
@@ -523,6 +525,7 @@ button:hover {
 .container .section .name-wrapper {
   height: 60px;
   position: relative;
+  white-space: nowrap;
 }
 .container .section .name-wrapper::after {
   content: "personal information";
@@ -594,7 +597,7 @@ button:hover {
   left: 0;
   padding: 1px 60px 1px 10px;
   margin-bottom: 5px;
-  font-size: 18px;
+  font-size: 100%;
   width: -moz-fit-content;
   width: fit-content;
   background-color: var(--primary-color);
@@ -610,7 +613,7 @@ button:hover {
   left: 0;
   padding: 1px 60px 1px 10px;
   margin-bottom: 5px;
-  font-size: 18px;
+  font-size: 100%;
   background-color: var(--primary-color);
   color: var(--second-color);
   content: "Nationality";
@@ -624,7 +627,7 @@ button:hover {
   left: 0;
   padding: 1px 60px 1px 10px;
   margin-bottom: 5px;
-  font-size: 18px;
+  font-size: 100%;
   background-color: var(--primary-color);
   color: var(--second-color);
   content: "Contact";
@@ -669,7 +672,7 @@ button:hover {
   margin: auto;
 }
 .container .introduction-section p {
-  margin: 20px;
+  margin: 5%;
   text-align: justify;
   -moz-text-align-last: center;
        text-align-last: center;
@@ -733,4 +736,11 @@ button:hover {
 .container .button-holder-2 #experience {
   z-index: 99;
   bottom: 0;
+}
+
+@media only screen and (max-width: 400px) {
+  .container {
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
 }/*# sourceMappingURL=index.css.map */
