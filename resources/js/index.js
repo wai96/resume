@@ -18,8 +18,16 @@ TxtType.prototype.tick = function () {
     this.txt = fullTxt.substring(0, this.txt.length + 1);
   }
 
-  this.el.innerHTML =
-    '<span class="name">' + "<p>" + this.txt + "</p>" + "</span>";
+  // this.el.innerHTML =
+  //   '<span class="name">' + "<p>" + this.txt + "</p>" + "</span>";
+
+  // var formattedText = this.txt
+  //   .replace(/^choo/, '<span class="surname">Choo</span>')
+  //   .replace(/ /g, '<span class="space">&nbsp;</span>');
+
+  // this.el.innerHTML = '<span class="name">' + formattedText + "</span>";
+
+  typing();
 
   var that = this;
   var delta = 200 - Math.random() * 100;
@@ -181,4 +189,53 @@ function back() {
   skill_wrapper.style.opacity = 0;
   skill_wrapper.style.top = 200 + "px";
   tt.style.opacity = 1;
+}
+
+function typing() {
+  TxtType.prototype.tick = function () {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
+
+    if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    // Only update HTML when full word exists to avoid broken tags
+    var words = this.txt.split(" ");
+    var output = '<span class="name">';
+
+    // Wrap first word only if fully typed
+    if (this.txt.length >= words[0].length) {
+      output += '<span class="surname">' + words[0] + "</span>";
+    } else {
+      output += words[0].substring(0, this.txt.length);
+    }
+
+    // Add remaining words/spaces
+    var remaining = this.txt.substring(words[0].length);
+    remaining = remaining.replace(/ /g, '<span class="space">&nbsp;</span>');
+    output += remaining;
+
+    output += "</span>";
+    this.el.innerHTML = output;
+
+    var that = this;
+    var delta = 200 - Math.random() * 100;
+    if (this.isDeleting) delta /= 2;
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+      delta = this.period;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === "") {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 500;
+    }
+
+    setTimeout(function () {
+      that.tick();
+    }, delta);
+  };
 }
