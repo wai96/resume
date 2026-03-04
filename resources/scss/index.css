@@ -105,6 +105,7 @@ button:hover {
   width: 100%;
   top: 0;
   left: 0;
+  background-image: url(../images/texture.webp);
   background-size: cover;
   mix-blend-mode: luminosity;
   pointer-events: none;
@@ -351,7 +352,7 @@ button:hover {
   width: 60%;
   color: rgb(196, 196, 196);
   font-size: 0.6em;
-  margin-left: 5px;
+  margin-left: 8px;
   animation: moving 1.2s ease;
 }
 @keyframes moving {
@@ -674,6 +675,7 @@ button:hover {
   text-align: justify;
   -moz-text-align-last: center;
        text-align-last: center;
+  font-weight: bold;
 }
 .container .button-holder {
   display: flex;
