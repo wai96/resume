@@ -629,52 +629,51 @@ button:hover {
       // padding-left: 5px;
       // margin-left: -5px;
 
-      @keyframes typing {
-        from {
-          width: 0;
-        }
+      // @keyframes typing {
+      //   from {
+      //     width: 0;
+      //   }
 
-        to {
-          width: 100%;
-        }
+      //   to {
+      //     width: 100%;
+      //   }
+      // }
+
+      // @keyframes blink-caret {
+      //   from,
+      //   to {
+      //     border-color: transparent;
+      //   }
+
+      //   50% {
+      //     border-color: var(--second-color);
+      //   }
+      // }
+
+      // p {
+      font-size: 36px;
+      font-family: Anton;
+      text-transform: uppercase;
+      letter-spacing: 0px;
+      transform: skewX(-5deg) scaleX(1.2);
+      transform-origin: left;
+
+      .space {
+        font-size: 20px;
       }
 
-      @keyframes blink-caret {
-        from,
-        to {
-          border-color: transparent;
-        }
-
-        50% {
-          border-color: var(--second-color);
-        }
+      .surname {
+        // text-shadow: -2px 2px 0 #000,
+        //     2px 2px 0 #000,
+        //     2px -2px 0 #000,
+        //     -2px -2px 0 #000;
+        letter-spacing: 2px;
+        color: var(--second-color);
+        paint-order: stroke fill;
+        -webkit-text-fill-color: var(--second-color);
+        -webkit-text-stroke: 4px black;
       }
-
-      p {
-        font-size: 36px;
-        font-family: Anton;
-        text-transform: uppercase;
-        letter-spacing: 0px;
-        transform: skewX(-5deg) scaleX(1.2);
-        transform-origin: left;
-
-        .space {
-          font-size: 20px;
-        }
-
-        .surname {
-          // text-shadow: -2px 2px 0 #000,
-          //     2px 2px 0 #000,
-          //     2px -2px 0 #000,
-          //     -2px -2px 0 #000;
-
-          letter-spacing: 2px;
-          color: var(--second-color);
-          paint-order: stroke fill;
-          -webkit-text-fill-color: var(--second-color);
-          -webkit-text-stroke: 4px black;
-        }
-      }
+      // }
     }
 
     .info-wrapper {

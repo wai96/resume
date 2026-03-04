@@ -538,24 +538,6 @@ button:hover {
 }
 .container .section .name {
   /* Ensures the content is not revealed until the animation */
-}
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-@keyframes blink-caret {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: var(--second-color);
-  }
-}
-.container .section .name p {
   font-size: 36px;
   font-family: Anton;
   text-transform: uppercase;
@@ -563,10 +545,10 @@ button:hover {
   transform: skewX(-5deg) scaleX(1.2);
   transform-origin: left;
 }
-.container .section .name p .space {
+.container .section .name .space {
   font-size: 20px;
 }
-.container .section .name p .surname {
+.container .section .name .surname {
   letter-spacing: 2px;
   color: var(--second-color);
   paint-order: stroke fill;
