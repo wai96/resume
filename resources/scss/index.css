@@ -432,7 +432,7 @@ button:hover {
   writing-mode: vertical-lr;
   text-orientation: mixed;
   font-size: 12px;
-  z-index: 999;
+  z-index: 99;
 }
 .container .title-wrapper {
   color: var(--second-color);
