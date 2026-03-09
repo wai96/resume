@@ -899,7 +899,9 @@ button:hover {
 
     #portfolio {
       background-color: var(--second-color);
-      color: black;
+      a {
+        color: black;
+      }
     }
 
     #skill-set,
