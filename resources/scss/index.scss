@@ -320,6 +320,7 @@ button:hover {
       .skill {
         .skill-title {
           font-size: 18px;
+          font-family: ArialMdm;
           text-align: center;
           margin: 60px auto 10px;
         }
@@ -881,7 +882,7 @@ button:hover {
   .button-holder-2 {
     width: 100%;
     margin: auto;
-    position: absolute;
+    // position: absolute;
     z-index: 99;
     display: flex;
     gap: 15px;
@@ -890,6 +891,7 @@ button:hover {
     padding: 0px 20px;
     box-sizing: border-box;
     justify-content: center;
+    margin-top: 20px;
 
     button {
       width: 50%;
