@@ -18,6 +18,11 @@
   src: url(../fonts/ARIBLK.TTF);
 }
 
+@font-face {
+  font-family: ArialMdm;
+  src: url(../fonts/ArialMdm.ttf);
+}
+
 :root {
   --primary-color: #232323;
   --second-color: #ffd00a;
@@ -836,9 +841,10 @@ button:hover {
     }
 
     p {
-      margin: 1.2em 0.5em;
+      margin: 1.2em 1em;
       text-align: justify;
       text-align-last: center;
+      font-family: ArialMdm;
     }
   }
 

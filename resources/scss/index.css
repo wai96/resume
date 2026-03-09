@@ -14,6 +14,10 @@
   font-family: ArialBlack;
   src: url(../fonts/ARIBLK.TTF);
 }
+@font-face {
+  font-family: ArialMdm;
+  src: url(../fonts/ArialMdm.ttf);
+}
 :root {
   --primary-color: #232323;
   --second-color: #ffd00a;
@@ -708,10 +712,11 @@ button:hover {
   margin: auto;
 }
 .container .introduction-section p {
-  margin: 1.2em 0.5em;
+  margin: 1.2em 1em;
   text-align: justify;
   -moz-text-align-last: center;
        text-align-last: center;
+  font-family: ArialMdm;
 }
 .container .button-holder {
   display: flex;
