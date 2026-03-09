@@ -13,6 +13,11 @@
   src: url(../fonts/Anton-Regular.ttf);
 }
 
+@font-face {
+  font-family: ArialBlack;
+  src: url(../fonts/ARIBLK.TTF);
+}
+
 :root {
   --primary-color: #232323;
   --second-color: #ffd00a;
@@ -206,7 +211,7 @@ button:hover {
           display: block;
           font-size: 9px;
           text-transform: uppercase;
-          font-family: Arial Black;
+          font-family: ArialBlack;
           letter-spacing: 0px;
         }
 
@@ -521,7 +526,7 @@ button:hover {
 
   .title-wrapper {
     color: var(--second-color);
-    font-family: Arial Black;
+    font-family: ArialBlack;
     text-transform: uppercase;
     font-size: 1.2em;
     margin-top: 20px;
@@ -719,7 +724,7 @@ button:hover {
 
         &:nth-child(1) {
           &::before {
-            font-family: Arial Black;
+            font-family: ArialBlack;
             position: relative;
             display: block;
             top: 0;
@@ -737,7 +742,7 @@ button:hover {
 
         &:nth-child(2) {
           &::before {
-            font-family: Arial Black;
+            font-family: ArialBlack;
             position: relative;
             display: block;
             top: 0;
@@ -754,7 +759,7 @@ button:hover {
 
         &:nth-child(3) {
           &::before {
-            font-family: Arial Black;
+            font-family: ArialBlack;
             position: relative;
             display: block;
             top: 0;
