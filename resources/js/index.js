@@ -4,31 +4,51 @@ var TxtType = function (el, toRotate, period) {
   this.loopNum = 0;
   this.period = parseInt(period, 10) || 2000;
   this.txt = "";
-  this.tick();
   this.isDeleting = false;
+  this.surname = "";
+  this.lastname = "";
+  this.lastname2 = "";
+  this.tick();
 };
 
 TxtType.prototype.tick = function () {
-  var i = this.loopNum % this.toRotate.length;
-  var fullTxt = this.toRotate[i];
+  var fullSurname = this.toRotate[0];
+  var fullLastname = this.toRotate[1];
+  var fullLastname2 = this.toRotate[2];
+  var fullTxt = fullSurname + " " + fullLastname + " " + fullLastname2;
 
   if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
+    if (this.lastname2.length > 0) {
+      this.lastname2 = fullLastname2.substring(0, this.lastname2.length - 1);
+    } else if (this.lastname.length > 0) {
+      this.lastname = fullLastname.substring(0, this.lastname.length - 1);
+    } else {
+      this.surname = fullSurname.substring(0, this.surname.length - 1);
+    }
   } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
+    if (this.surname.length < fullSurname.length) {
+      this.surname = fullSurname.substring(0, this.surname.length + 1);
+    } else if (this.lastname.length < fullLastname.length) {
+      this.lastname = fullLastname.substring(0, this.lastname.length + 1);
+    } else {
+      this.lastname2 = fullLastname2.substring(0, this.lastname2.length + 1);
+    }
   }
 
-  // this.el.innerHTML =
-  //   '<span class="name">' + "<p>" + this.txt + "</p>" + "</span>";
-
-  // var formattedText = this.txt
-  //   .replace(/^choo/, '<span class="surname">Choo</span>')
-  //   .replace(/ /g, '<span class="space">&nbsp;</span>');
-
-  // this.el.innerHTML = '<span class="name">' + formattedText + "</span>";
-
-  typing();
-
+  this.txt =
+    this.surname +
+    (this.lastname.length > 0 ? " " : "") +
+    this.lastname +
+    (this.lastname2.length > 0 ? " " : "") +
+    this.lastname2;
+  this.el.innerHTML =
+    '<span class="name"><p><span class="surname">' +
+    this.surname +
+    '</span><span class="space">&nbsp;</span>' +
+    this.lastname +
+    '<span class="space">&nbsp;</span>' +
+    this.lastname2 +
+    "</p></span>";
   var that = this;
   var delta = 200 - Math.random() * 100;
 
@@ -59,21 +79,13 @@ window.onload = function () {
       new TxtType(elements[i], JSON.parse(toRotate), period);
     }
   }
-  // // INJECT CSS
-  // var css = document.createElement("style");
-  // css.type = "text/css";
-  // css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-  // document.body.appendChild(css);
 };
 
 let exp_skill = document.querySelector(".exp-skill-wrapper");
-// let exp_wrapper = document.querySelector(".experience-container");
 let skill_wrapper = document.querySelector(".skill-container");
-// let skill_btn = document.getElementById("skill-set");
-// let exp_btn = document.getElementById("experience");
-// let bool = false;
 
 let tt = document.querySelector(".texture");
+let tape = document.querySelectorAll(".tape");
 let skill_lvl = document.querySelectorAll(".mask");
 let skill_icon = document.querySelectorAll(".skill-set-icon-wrapper");
 let percentage = [75, 50, 70, 40, 60, 30, 50, 50];
@@ -132,35 +144,18 @@ function skill() {
 
 document.getElementById("experience-skills").addEventListener("click", () => {
   exp_skill.style.display = "block";
-  //   bool = false;
+  bool = false;
+  tape.forEach((_t) => {
+    _t.style.opacity = 0;
+  });
   infoUpdate();
 });
 
 function infoUpdate() {
-  //   if (!bool) {
-  //     exp_wrapper.style.opacity = 1;
-  //     exp_wrapper.style.top = 0;
-  //     skill_wrapper.style.opacity = 0;
-  //     skill_wrapper.style.top = 200 + "px";
-  //     skillReset();
-  //     document.getElementById("back").style.backgroundColor = "#5f5f5f";
-  //     // document.getElementById("back").style.border = "2px solid black";
-  //     document.getElementById("back").style.color = "white";
-  //     // skill_btn.classList.remove("active");
-  //     // exp_btn.classList.add("active");
-  //     tt.style.opacity = 1;
-  //   } else {
   skill_wrapper.style.opacity = 1;
   skill_wrapper.style.top = 0;
-  // exp_wrapper.style.opacity = 0;
-  // exp_wrapper.style.top = 200 + "px";
   skill();
-  // document.getElementById("back").style.backgroundColor = "var(--second-color)";
-  // document.getElementById("back").style.color = "black";
-  // skill_btn.classList.add("active");
-  // exp_btn.classList.remove("active");
   tt.style.opacity = 0;
-  //   }
 }
 
 document.querySelectorAll(".btn").forEach((btn) => {
@@ -172,70 +167,12 @@ document.querySelectorAll(".btn").forEach((btn) => {
   });
 });
 
-// skill_btn.addEventListener("click", () => {
-//   bool = true;
-//   infoUpdate();
-// });
-
-// exp_btn.addEventListener("click", () => {
-//   bool = false;
-//   infoUpdate();
-// });
-
 function back() {
   exp_skill.style.display = "none";
-  // exp_wrapper.style.opacity = 0;
-  // exp_wrapper.style.top = 200 + "px";
   skill_wrapper.style.opacity = 0;
   skill_wrapper.style.top = 200 + "px";
-  tt.style.opacity = 1;
-}
-
-function typing() {
-  TxtType.prototype.tick = function () {
-    var i = this.loopNum % this.toRotate.length;
-    var fullTxt = this.toRotate[i];
-
-    if (this.isDeleting) {
-      this.txt = fullTxt.substring(0, this.txt.length - 1);
-    } else {
-      this.txt = fullTxt.substring(0, this.txt.length + 1);
-    }
-
-    // Only update HTML when full word exists to avoid broken tags
-    var words = this.txt.split(" ");
-    var output = '<span class="name">';
-
-    // Wrap first word only if fully typed
-    if (this.txt.length >= words[0].length) {
-      output += '<span class="surname">' + words[0] + "</span>";
-    } else {
-      output += words[0].substring(0, this.txt.length);
-    }
-
-    // Add remaining words/spaces
-    var remaining = this.txt.substring(words[0].length);
-    remaining = remaining.replace(/ /g, '<span class="space">&nbsp;</span>');
-    output += remaining;
-
-    output += "</span>";
-    this.el.innerHTML = output;
-
-    var that = this;
-    var delta = 200 - Math.random() * 100;
-    if (this.isDeleting) delta /= 2;
-
-    if (!this.isDeleting && this.txt === fullTxt) {
-      delta = this.period;
-      this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === "") {
-      this.isDeleting = false;
-      this.loopNum++;
-      delta = 500;
-    }
-
-    setTimeout(function () {
-      that.tick();
-    }, delta);
-  };
+  tt.style.opacity = 0.8;
+  tape.forEach((_t) => {
+    _t.style.opacity = 1;
+  });
 }
